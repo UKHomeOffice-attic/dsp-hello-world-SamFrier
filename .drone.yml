@@ -15,7 +15,7 @@ pipeline:
     environment:
       - DOCKER_HOST=tcp://127.0.0.1:2375
     commands:
-      - docker login -u="ukhomeofficedigital+drone_demo" -p=${DOCKER_PASSWORD} quay.io
+      - docker login -u="samfrier" -p=${DOCKER_PASSWORD} quay.io
       - docker tag dsp-hello-world-samfrier quay.io/ukhomeofficedigital/dsp-hello-world-samfrier:${DRONE_COMMIT_SHA}
       - docker quay.io/ukhomeofficedigital/dsp-hello-world-samfrier:${DRONE_COMMIT_SHA}
     when:
